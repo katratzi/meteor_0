@@ -1,0 +1,15 @@
+to run just cd into directory and run
+> meteor
+
+
+// in collection.js
+Todos = new Mongo.Collection('todos');
+
+// import
+import '../lib/collections.js';
+
+
+C:\Users\Richard\Downloads\web\08_meteor\quicktodos>meteor mongo
+meteor:PRIMARY> db.todos.insert({text:'Pick up kids from school',time:'3.00'});
+WriteResult({ "nInserted" : 1 })
+meteor:PRIMARY>
