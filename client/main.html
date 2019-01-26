@@ -2,16 +2,21 @@
   <div class="container">
     <header>
       <h1>{{title}}</h1>
+      <form class="add-todo">
+        <input type="text" name="text" placeholder="Add todo">
+        <input type="text" name="time" placeholder="Add time">
+        <button type="submit">Add</button>
+      </form>
     </header>
  
     <ul>
       {{#each tasks}}
-        {{> task}}
+       {{> task}}
       {{/each}}
     </ul>
   </div>
 </body>
  
 <template name="task">
-  <li>{{text}}</li>
+  <li><strong>{{time}}: </strong>{{text}}</li>
 </template>
