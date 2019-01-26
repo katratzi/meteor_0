@@ -21,13 +21,26 @@ Template.body.events({
         // don't do a file write
         event.preventDefault();
         // get and log text
-        const text = event.target.text.value;        
-        const time = event.target.time.value;        
+        const text = event.target.text.value;
+        const time = event.target.time.value;
         console.log(text + " " + time);
         // add to db
-        Tasks.insert({text, time})
+        Tasks.insert({ text, time })
         // clear values
-        event.target.text.value ='';        
-        event.target.time.value ='';        
+        event.target.text.value = '';
+        event.target.time.value = '';
     }
+});
+
+Template.task.events({
+    // toggle and save value
+    'click .toggle-checked'(event) {
+        Tasks.update(this._id, {
+            $set: { checked: !this.checked }
+        });
+    },
+    'click .delete'(event) {
+        Tasks.remove(this._id);
+    }
+
 });

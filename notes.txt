@@ -13,3 +13,5 @@ C:\Users\Richard\Downloads\web\08_meteor\quicktodos>meteor mongo
 meteor:PRIMARY> db.todos.insert({text:'Pick up kids from school',time:'3.00'});
 WriteResult({ "nInserted" : 1 })
 meteor:PRIMARY>
+
+// &times for x delete icon

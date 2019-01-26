@@ -1,22 +1,29 @@
+
+
 <body>
   <div class="container">
     <header>
-      <h1>{{title}}</h1>
+      <h1>{{ title }}</h1>
       <form class="add-todo">
-        <input type="text" name="text" placeholder="Add todo">
-        <input type="text" name="time" placeholder="Add time">
+        <input type="text" name="text" placeholder="Add todo" />
+        <input type="text" name="time" placeholder="Add time" />
         <button type="submit">Add</button>
       </form>
     </header>
- 
+
     <ul>
       {{#each tasks}}
-       {{> task}}
+      {{> task}}
       {{/each}}
     </ul>
   </div>
 </body>
- 
+
+
 <template name="task">
-  <li><strong>{{time}}: </strong>{{text}}</li>
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+    <input type="checkbox" checked={{checked}} class="toggle-checked">
+    <strong>{{ time }}: </strong>{{ text }}
+  </li>
 </template>
