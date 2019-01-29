@@ -15,3 +15,6 @@ WriteResult({ "nInserted" : 1 })
 meteor:PRIMARY>
 
 // &times for x delete icon
+
+// meteor packages
+meteor add accounts-ui accounts-password

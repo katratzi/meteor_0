@@ -2,13 +2,19 @@
 
 <body>
   <div class="container">
+
     <header>
+{{> loginButtons}}
+<hr>
+
       <h1>{{ title }}</h1>
+      {{#if currentUser}}
       <form class="add-todo">
         <input type="text" name="text" placeholder="Add todo" />
         <input type="text" name="time" placeholder="Add time" />
         <button type="submit">Add</button>
       </form>
+      {{/if}}
     </header>
 
     <ul>
@@ -24,6 +30,6 @@
   <li class="{{#if checked}}checked{{/if}}">
     <button class="delete">&times;</button>
     <input type="checkbox" checked={{checked}} class="toggle-checked">
-    <strong>{{ time }}: </strong>{{ text }}
+    <strong>{{ username }}: </strong>{{ text }} <span>[{{ time }}]</span>
   </li>
 </template>
